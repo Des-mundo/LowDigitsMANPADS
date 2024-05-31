@@ -14,6 +14,7 @@ Fast jets will rarely be hit if they do at least one of the following:
 * use flares
 * fly slow (<300 kts)
 * avoid flying dead straight
+
 Most aircraft should be able to survive a single hit and you will get to finally experience the hard work developers put into your favourite colander's damage model. 
 
 The Strela-2M is a significantly improved system with capability increases across the board. It is much more likely to successfully engage fast movers.
