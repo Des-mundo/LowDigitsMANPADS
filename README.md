@@ -31,4 +31,4 @@ Installation
 Place the unpacked folders into the %drive_letter/Users/%user/Saved Games/DCS* directory.
 
 ------------
-Credit goes to the HDS team: this mod is a modification of their
+Credit goes to the HDS team: this mod is a modification of their Strela-3 implementation, itself a mix of fim-92 and igla MANPADS. 
