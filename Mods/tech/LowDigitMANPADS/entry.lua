@@ -50,11 +50,14 @@ end
 
 weapon_file("/Database/Weapon/9M32_LDM.lua")
 weapon_file("/Database/Weapon/9M32M_LDM.lua")
+weapon_file("/Database/Weapon/Blowpipe_LDM.lua")
+weapon_file("/Database/Weapon/FIM43C_LDM.lua")
 
 --MANPADS
 
 vehicle_file("/Database/Vehicle/Soldier Strela2 LDM.lua")
 vehicle_file("/Database/Vehicle/Soldier Strela2M LDM.lua")
-
+vehicle_file("/Database/Vehicle/Soldier Blowpipe LDM.lua")
+vehicle_file("/Database/Vehicle/Soldier Redeye LDM.lua")
 
 plugin_done()
