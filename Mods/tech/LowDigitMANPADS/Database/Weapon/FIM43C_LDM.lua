@@ -1,28 +1,4 @@
 -- Missile
-local function calcPiercingMass(warhead)
-	warhead.piercing_mass  = warhead.mass;
-	if (warhead.expl_mass/warhead.mass > 0.1) then
-		warhead.piercing_mass  = warhead.mass/5.0;
-	end
-end
-
-local function simple_aa_warhead(power, caliber) -- By Saint
-    local res = {};
-
-	res.caliber = caliber
-	res.mass = power; --old explosion damage effect
-    res.expl_mass = 0.36;
-    res.other_factors = {1, 1, 1};
-    res.obj_factors = {1, 1};
-    res.concrete_factors = {1, 1, 1};
-    res.cumulative_factor = 0;
-    res.concrete_obj_factor = 0.0;
-    res.cumulative_thickness = 0.0;
-    
-	calcPiercingMass(res)
-    return res;
-end
-
 local FIM43C_LDM = {
 	category		= CAT_MISSILES,
 	name			= "FIM-43C_LDM",
