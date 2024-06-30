@@ -5,7 +5,7 @@ displayName   = _("Low Digit MANPADS"),
 shortName	  =   "LowDigitMANPADS",
 state		 	  = "installed",
 developerName	  = "modified by Des, credit goes to the High Digit SAMs Mod team",
-version		 	  = "0.3",	
+version		 	  = "0.4",	
 info		  =    _("Adds Strela-2/M 9M32/M"),	 
 encyclopedia_path = current_mod_path .. '/Encyclopedia',
 })
