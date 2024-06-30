@@ -48,17 +48,16 @@ end
 
 --Russia
 
-weapon_file("/Database/Weapon/9M32.lua")
-weapon_file("/Database/Weapon/9M32M.lua")
+weapon_file("/Database/Weapon/9M32_LDM.lua")
+weapon_file("/Database/Weapon/9M32M_LDM.lua")
 weapon_file("/Database/Weapon/Blowpipe_LDM.lua")
 weapon_file("/Database/Weapon/FIM43C_LDM.lua")
 
 --MANPADS
 
-vehicle_file("/Database/Vehicle/Strela-2.lua")
-vehicle_file("/Database/Vehicle/Strela-2M.lua")
+vehicle_file("/Database/Vehicle/Soldier Strela2 LDM.lua")
+vehicle_file("/Database/Vehicle/Soldier Strela2M LDM.lua")
 vehicle_file("/Database/Vehicle/Soldier Blowpipe LDM.lua")
 vehicle_file("/Database/Vehicle/Soldier Redeye LDM.lua")
-
 
 plugin_done()

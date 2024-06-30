@@ -23,7 +23,7 @@ GT.WS.fire_on_march = false;
 
 local ws = GT_t.inc_ws();
 GT.WS[ws] = {};
-set_recursive_metatable(GT.WS[ws], GT_t.WS_t.strela2_manpad);
+set_recursive_metatable(GT.WS[ws], GT_t.WS_t.strela2_LDM_manpad);
 GT.WS[ws].cockpit = {"IglaSight/IglaSight", {0.0, 0.0, 0.0}}
 GT.WS[ws].pointer = "camera";
 local __LN = GT.WS[ws].LN[1]
@@ -31,7 +31,7 @@ __LN.BR[1].connector_name = "POINT_LAUNCHER";
 __LN.sightMasterMode = 1;
 __LN.sightIndicationMode = 1;
 
-GT.Name = "SA-7 Strela-2 manpad";
+GT.Name = "Soldier_Strela2_LDM";
 GT.DisplayName = _('MANPADS Strela-2 SA-7 "Grail"');
 GT.DisplayNameShort = _('SA-7');
 GT.Rate = 5;
