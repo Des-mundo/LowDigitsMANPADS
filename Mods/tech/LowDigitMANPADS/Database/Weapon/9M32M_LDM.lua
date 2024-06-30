@@ -23,7 +23,7 @@ local function simple_aa_warhead(power, caliber) -- By Saint
     return res;
 end
 
-local SA9M32M = {
+local SA9M32M_LDM = {
 	category		= CAT_MISSILES,
 	name			= "Strela-2M",
 	user_name		= _("9M32M Strela-2M"),
@@ -211,44 +211,44 @@ local SA9M32M = {
 		fin2_coeff		= 0.5,
 	},
 };
-declare_weapon(SA9M32M)
+declare_weapon(SA9M32M_LDM)
 
-GT_t.LN_t.strela2m = {}
-GT_t.LN_t.strela2m.type = 4
-GT_t.LN_t.strela2m.distanceMin = 800 --500
-GT_t.LN_t.strela2m.distanceMax = 4200 --4500
-GT_t.LN_t.strela2m.reactionTime = 2;
-GT_t.LN_t.strela2m.launch_delay = 1;
-GT_t.LN_t.strela2m.maxShootingSpeed = 0
-GT_t.LN_t.strela2m.reflection_limit = 0.22
-GT_t.LN_t.strela2m.ECM_K = -1
-GT_t.LN_t.strela2m.min_launch_angle = math.rad(-20);
-GT_t.LN_t.strela2m.inclination_correction_upper_limit = math.rad(0);
-GT_t.LN_t.strela2m.inclination_correction_bias = (0);
-GT_t.LN_t.strela2m.sensor = {}
-set_recursive_metatable(GT_t.LN_t.strela2m.sensor, GT_t.WSN_t[0])
-GT_t.LN_t.strela2m.PL = {}
-GT_t.LN_t.strela2m.PL[1] = {}
-GT_t.LN_t.strela2m.PL[1].ammo_capacity = 3
-GT_t.LN_t.strela2m.PL[1].shot_delay = 0.01
-GT_t.LN_t.strela2m.PL[1].reload_time = 120
-GT_t.LN_t.strela2m.PL[1].type_ammunition = SA9M32M.wsTypeOfWeapon;
-GT_t.LN_t.strela2m.PL[1].automaticLoader = false
-GT_t.LN_t.strela2m.BR = { { pos = {1, 0, 0}, drawArgument = 4}, }
+GT_t.LN_t.strela2m_LDM = {}
+GT_t.LN_t.strela2m_LDM.type = 4
+GT_t.LN_t.strela2m_LDM.distanceMin = 800 --500
+GT_t.LN_t.strela2m_LDM.distanceMax = 4200 --4500
+GT_t.LN_t.strela2m_LDM.reactionTime = 2;
+GT_t.LN_t.strela2m_LDM.launch_delay = 1;
+GT_t.LN_t.strela2m_LDM.maxShootingSpeed = 0
+GT_t.LN_t.strela2m_LDM.reflection_limit = 0.22
+GT_t.LN_t.strela2m_LDM.ECM_K = -1
+GT_t.LN_t.strela2m_LDM.min_launch_angle = math.rad(-20);
+GT_t.LN_t.strela2m_LDM.inclination_correction_upper_limit = math.rad(0);
+GT_t.LN_t.strela2m_LDM.inclination_correction_bias = (0);
+GT_t.LN_t.strela2m_LDM.sensor = {}
+set_recursive_metatable(GT_t.LN_t.strela2m_LDM.sensor, GT_t.WSN_t[0])
+GT_t.LN_t.strela2m_LDM.PL = {}
+GT_t.LN_t.strela2m_LDM.PL[1] = {}
+GT_t.LN_t.strela2m_LDM.PL[1].ammo_capacity = 3
+GT_t.LN_t.strela2m_LDM.PL[1].shot_delay = 0.01
+GT_t.LN_t.strela2m_LDM.PL[1].reload_time = 120
+GT_t.LN_t.strela2m_LDM.PL[1].type_ammunition = SA9M32M_LDM.wsTypeOfWeapon;
+GT_t.LN_t.strela2m_LDM.PL[1].automaticLoader = false
+GT_t.LN_t.strela2m_LDM.BR = { { pos = {1, 0, 0}, drawArgument = 4}, }
 
-GT_t.WS_t.strela2m_manpad = {};
-GT_t.WS_t.strela2m_manpad.pos = {-0.071, 1.623,0};
-GT_t.WS_t.strela2m_manpad.angles = {
+GT_t.WS_t.strela2m_LDM_manpad = {};
+GT_t.WS_t.strela2m_LDM_manpad.pos = {-0.071, 1.623,0};
+GT_t.WS_t.strela2m_LDM_manpad.angles = {
 					{math.rad(180), math.rad(-180), math.rad(-45), math.rad(80)},
 					};
-GT_t.WS_t.strela2m_manpad.drawArgument1 = 0;
-GT_t.WS_t.strela2m_manpad.drawArgument2 = 1;
-GT_t.WS_t.strela2m_manpad.omegaY = 1.5;
-GT_t.WS_t.strela2m_manpad.omegaZ = 1.5;
-GT_t.WS_t.strela2m_manpad.pidY = {p=40,i=1.0,d=7, inn = 5};
-GT_t.WS_t.strela2m_manpad.pidZ = {p=40,i=1.0,d=7, inn = 5};
-GT_t.WS_t.strela2m_manpad.reloadAngleY = -100; -- not constrained
-GT_t.WS_t.strela2m_manpad.LN = {};
-GT_t.WS_t.strela2m_manpad.LN[1] = {};
-set_recursive_metatable(GT_t.WS_t.strela2m_manpad.LN[1], GT_t.LN_t.strela2m);
-GT_t.WS_t.strela2m_manpad.LN[1].PL[1].shot_delay = 13;
+GT_t.WS_t.strela2m_LDM_manpad.drawArgument1 = 0;
+GT_t.WS_t.strela2m_LDM_manpad.drawArgument2 = 1;
+GT_t.WS_t.strela2m_LDM_manpad.omegaY = 1.5;
+GT_t.WS_t.strela2m_LDM_manpad.omegaZ = 1.5;
+GT_t.WS_t.strela2m_LDM_manpad.pidY = {p=40,i=1.0,d=7, inn = 5};
+GT_t.WS_t.strela2m_LDM_manpad.pidZ = {p=40,i=1.0,d=7, inn = 5};
+GT_t.WS_t.strela2m_LDM_manpad.reloadAngleY = -100; -- not constrained
+GT_t.WS_t.strela2m_LDM_manpad.LN = {};
+GT_t.WS_t.strela2m_LDM_manpad.LN[1] = {};
+set_recursive_metatable(GT_t.WS_t.strela2m_LDM_manpad.LN[1], GT_t.LN_t.strela2m_LDM);
+GT_t.WS_t.strela2m_LDM_manpad.LN[1].PL[1].shot_delay = 13;
