@@ -93,7 +93,7 @@ local FIM43C_LDM = {
 	Reflection = 0.01,
 	KillDistance = 1,
 	--seeker sensivity params
-	SeekerSensivityDistance = 5000, -- The range of target with IR value = 1. In meters.
+	SeekerSensivityDistance = 6000, -- The range of target with IR value = 1. In meters.
 	ccm_k0 = 1.38,  -- Counter Countermeasures Probability Factor. Value = 0 - missile has absolutely resistance to countermeasures. Default = 1 (medium probability)
 	SeekerCooled			= true, -- True is cooled seeker and false is not cooled seeker.
 	shape_table_data = 
@@ -130,8 +130,8 @@ local FIM43C_LDM = {
 		
 	march = {
 		impulse								= 252,
-		fuel_mass							= 2.76,
-		work_time							= 5.8,
+		fuel_mass							= 2.76,	--2.76kg total mass of fuel
+		work_time							= 5.8,	--5.8s total burn, burns fuel at rate of 0.47586 kg/s
 		boost_time							= 0,
 		boost_factor						= 0,
 		nozzle_position						= {{-0.8, 0.0, 0.0}},
@@ -143,7 +143,7 @@ local FIM43C_LDM = {
 	},
 
 	march2 = {
-		impulse								= 180,
+		impulse								= 180,	--march2 not currently used
 		fuel_mass							= 1.6,
 		work_time							= 4.6,
 		boost_time							= 0,
