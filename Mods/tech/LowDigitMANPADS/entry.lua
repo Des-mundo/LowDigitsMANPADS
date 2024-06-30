@@ -48,8 +48,8 @@ end
 
 --Russia
 
-weapon_file("/Database/Weapon/9M32.lua")
-weapon_file("/Database/Weapon/9M32M.lua")
+weapon_file("/Database/Weapon/9M32_LDM.lua")
+weapon_file("/Database/Weapon/9M32M_LDM.lua")
 
 --MANPADS
 
