@@ -31,9 +31,9 @@ __LN.BR[1].connector_name = "POINT_LAUNCHER";
 __LN.sightMasterMode = 1;
 __LN.sightIndicationMode = 1;
 
-GT.Name = "SA-7b Strela-2M manpad";
-GT.DisplayName = _('MANPADS Strela-2M SA-7b "Grail"');
-GT.DisplayNameShort = _('SA-7b');
+GT.Name = "Soldier_Strela2M_LDM";
+GT.DisplayName = _('MANPADS Strela-2M SA-7B "Grail"');
+GT.DisplayNameShort = _('SA-7B');
 GT.Rate = 5;
 
 GT.DetectionRange  = GT.sensor.max_range_finding_target;
