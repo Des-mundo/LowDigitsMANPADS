@@ -23,7 +23,7 @@ GT.WS.fire_on_march = false;
 
 local ws = GT_t.inc_ws();
 GT.WS[ws] = {};
-set_recursive_metatable(GT.WS[ws], GT_t.WS_t.strela2_manpad);
+set_recursive_metatable(GT.WS[ws], GT_t.WS_t.strela2_LDM_manpad);
 GT.WS[ws].cockpit = {"IglaSight/IglaSight", {0.0, 0.0, 0.0}}
 GT.WS[ws].pointer = "camera";
 local __LN = GT.WS[ws].LN[1]
