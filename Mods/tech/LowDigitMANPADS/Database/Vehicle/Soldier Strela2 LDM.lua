@@ -31,7 +31,7 @@ __LN.BR[1].connector_name = "POINT_LAUNCHER";
 __LN.sightMasterMode = 1;
 __LN.sightIndicationMode = 1;
 
-GT.Name = "SA-7 Strela-2 manpad";
+GT.Name = "Soldier_Strela2_LDM";
 GT.DisplayName = _('MANPADS Strela-2 SA-7 "Grail"');
 GT.DisplayNameShort = _('SA-7');
 GT.Rate = 5;
