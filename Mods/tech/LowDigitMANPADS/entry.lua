@@ -5,7 +5,7 @@ displayName   = _("Low Digit MANPADS"),
 shortName	  =   "LowDigitMANPADS",
 state		 	  = "installed",
 developerName	  = "modified by Des, credit goes to the High Digit SAMs Mod team",
-version		 	  = "0.3",	
+version		 	  = "0.4",	
 info		  =    _("Adds Strela-2/M 9M32/M"),	 
 encyclopedia_path = current_mod_path .. '/Encyclopedia',
 })
@@ -50,11 +50,15 @@ end
 
 weapon_file("/Database/Weapon/9M32.lua")
 weapon_file("/Database/Weapon/9M32M.lua")
+weapon_file("/Database/Weapon/Blowpipe_LDM.lua")
+weapon_file("/Database/Weapon/FIM43C_LDM.lua")
 
 --MANPADS
 
 vehicle_file("/Database/Vehicle/Strela-2.lua")
 vehicle_file("/Database/Vehicle/Strela-2M.lua")
+vehicle_file("/Database/Vehicle/Soldier Blowpipe LDM.lua")
+vehicle_file("/Database/Vehicle/Soldier Redeye LDM.lua")
 
 
 plugin_done()
