@@ -1,4 +1,13 @@
 # LowDigitsMANPADS
+--------------------------------------------------
+v0.4 - 6/7/2024 - Second release: Blowpipe, Redeye
+--------------------------------------------------
+This release adds the Shorts Blowpipe and FIM-43C Redeye systems to the mod, courtesy of Xeno426.
+
+The Blowpipe uses some of the SeaCat code to simulate a near-impossible MCLOS targetting and the resulting missile trajectory.
+
+Both systems should be fairly inaccurate and unlikely to hit a fast jet.
+
 -----------------------------------
 v0.3 - 5/31/2024 - Initial release.
 -----------------------------------
@@ -12,7 +21,7 @@ In gameplay terms, the missile is dangerous to helicopters and low flying cargo 
 Fast jets will rarely be hit if they do at least one of the following:
 * stay above 4500 ft
 * use flares
-* fly slow (<300 kts)
+* fly fast (>300 kts)
 * avoid flying dead straight
 
 Most aircraft should be able to survive a single hit and you will get to finally experience the hard work developers put into your favourite colander's damage model. 
@@ -25,7 +34,7 @@ Known Issues
 ------------
 * the AI will attempt side-aspect launches as of now, which will almost always miss. The issue seems to be with AI behaviour, not so much as with the system's capability.
 * the motor characteristics need tuning to better reflect the characteristics of the actual booster and 2-stage rocked motor used in the 9m32 and 9m32m
-
+* 
 ------------
 Installation
 ------------
