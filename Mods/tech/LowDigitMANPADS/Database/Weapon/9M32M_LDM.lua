@@ -30,7 +30,7 @@ local SA9M32M_LDM = {
 	user_name_short		= _("Strela-2M"),
 	scheme			= "self_homing_spin_missile2",
 	class_name		= "wAmmunitionSelfHoming",
-	model			= "fim-92",
+	model			= "OH58D_FIM_92", --"fim-92",
 	mass			= 9.85, --10.3
 	
 	wsTypeOfWeapon  = {wsType_Weapon,wsType_Missile,wsType_SA_Missile,WSTYPE_PLACEHOLDER};
