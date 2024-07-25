@@ -1,0 +1,24 @@
+MANPADS Blowpipe - shooter
+
+soldier_stinger
+Soldier_Blowpipe_LDM
+
+Type: Low-altitude SAM system
+In service: 1975
+Length (missile): 1.35 m
+Diameter (missile): 76 mm
+Weight (launcher complete): 22 kg
+Weight (missile): 11 kg (14.5 kg in launch tube)
+Warhead weight: 2.2 kg
+Warhead type: Shaped charge
+Max range: 3500 m
+Min effective range: 500 m
+Max altitude: 2700 m
+Max speed: Mach 1.5
+Seeker: MCLOS guidance via command radio link
+
+The Shorts Blowpipe is unique among MANPADS in that it relies on manual guidance to target using a small joystick, sending guidance commands via radio link. This design choice was made in order to reduce per-missile cost--since the most expensive guidance components were in the re-usable launcher system--and to reduce development time.
+
+While this made the missile immune to countermeasures and capable of head-on engagements when its contemporary systems were still effecitvely tail-chaisers, the difficulty of using the system made it infamously inaccurate. During the Falklands War, where both sides employed the system, the British fired 95 missiles and hit only nine targets. After-action reports could only attribute one hit to an actual kill, that of an MB-339. On the Argentinian side, a single Harrier GR.3 could be confirmed downed by a Blowpipe.
+
+The system was eventually replaced by the Javelin, which uses a SACLOS guidance system.

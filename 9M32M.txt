@@ -1,0 +1,15 @@
+9M32M Strela-2M
+
+OH58D_FIM_92
+
+
+Name: Strela-2M (SA-7B 'Grail')
+Type: Short-range, infra-red guided, surface-to-air missile, man-portable
+Developed: Soviet Union
+Guidance: Infrared seeker
+Warhead weight, kg: 1.17
+Weight, kg: 9.8 kg
+Length, m: 1.42
+Body diameter, mm: 72
+Range, km: 4.2
+Maximum Mach number: 630 m/s
