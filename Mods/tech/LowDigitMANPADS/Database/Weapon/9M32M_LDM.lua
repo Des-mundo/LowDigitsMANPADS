@@ -26,7 +26,8 @@ end
 local SA9M32M_LDM = {
 	category		= CAT_MISSILES,
 	name			= "Strela-2M",
-	user_name		= _("9M32M Strela-2M"),
+	user_name		= _("9M32M Strela-2M"),	
+	user_name_short		= _("Strela-2M"),
 	scheme			= "self_homing_spin_missile2",
 	class_name		= "wAmmunitionSelfHoming",
 	model			= "fim-92",
@@ -99,7 +100,7 @@ local SA9M32M_LDM = {
 	{
 		{
 			name	 = "Strela-2M";
-			file  	 = "fim-92";
+			file  	 = "OH58D_FIM_92";
 			life  	 = 1;
 			fire  	 = { 0, 1};
 			username = "SA9M32M";
