@@ -3,6 +3,7 @@ local BLOWPIPE_LDM = {
 	category		= CAT_MISSILES,
 	name			= "Blowpipe_LDM",
 	user_name		= _("Blowpipe"),
+	display_name	= _("Blowpipe"),
 	scheme			= "command_guided_missile_sfe",	--command guidance, like Sea Cat missile
 	class_name		= "wAmmunitionVikhr",
 	model			= "mistral_missile",
@@ -228,4 +229,4 @@ GT_t.WS_t.BLOWPIPE_LDM_MANPAD.reloadAngleY = -100; -- not constrained
 GT_t.WS_t.BLOWPIPE_LDM_MANPAD.LN = {};
 GT_t.WS_t.BLOWPIPE_LDM_MANPAD.LN[1] = {};
 set_recursive_metatable(GT_t.WS_t.BLOWPIPE_LDM_MANPAD.LN[1], GT_t.LN_t.Blowpipe_LDM_missile);
-GT_t.WS_t.BLOWPIPE_LDM_MANPAD.LN[1].PL[1].shot_delay = 13;
+GT_t.WS_t.BLOWPIPE_LDM_MANPAD.LN[1].PL[1].shot_delay = 16;
