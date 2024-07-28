@@ -7,7 +7,7 @@ local SA9M32_LDM = {
 	display_name_short = _("Strela-2"),
 	scheme			= "self_homing_spin_missile2",
 	class_name		= "wAmmunitionSelfHoming",
-	model			= "OH58D_FIM_92",	--"fim-92",
+	model			= "OH58D_FIM_92",	--"fim-92", changed model to new Polychop Stinger model; it has a lighter texture and looks closer to the original Strela-2 missiles
 	mass			= 9.2, --10.3
 	
 	wsTypeOfWeapon  = {wsType_Weapon,wsType_Missile,wsType_SA_Missile,WSTYPE_PLACEHOLDER};
@@ -77,7 +77,7 @@ local SA9M32_LDM = {
 	{
 		{
 			name	 = "Strela-2";
-			file  	 = "OH58D_FIM_92";
+			file  	 = "OH58D_FIM_92";	--new model
 			life  	 = 1;
 			fire  	 = { 0, 1};
 			username = "SA9M32";
@@ -97,7 +97,7 @@ local SA9M32_LDM = {
 		work_time							= 0.048,
 		boost_time							= 0,
 		boost_factor						= 0,
-		nozzle_position						= {{-0.635, 0.0, 0.001}},
+		nozzle_position						= {{-0.635, 0.0, 0.001}},	--adjusted nozzle position to better fit new model
 		nozzle_orientationXYZ				= {{0.0, 0.0, 0.0}},
 		tail_width							= 0.4,
 		smoke_color							= {1.0, 1.0, 1.0},
