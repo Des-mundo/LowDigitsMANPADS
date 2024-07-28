@@ -4,7 +4,7 @@ local FIM43C_LDM = {
 	name			= "FIM43C_LDM",
 	user_name		= _("FIM-43C Redeye"),
 	display_name	= _("FIM-43C Redeye"),
-	display_name_short = _("FIM-43C"),
+	display_name_short = _("FIM-43C"),	--this is the short name that shows up in the F10 map
 	scheme			= "self_homing_spin_missile",	--"self_homing_spin_missile2",
 	class_name		= "wAmmunitionSelfHoming",
 	model			= "fim-92",
@@ -33,7 +33,7 @@ local FIM43C_LDM = {
 	t_marsh = 5.8,
 	Range_max = 4500.0,
 	H_min_t = 10.0,
-	Fi_rak = math.rad(60),
+	Fi_rak = math.rad(60),	--restricted the initial missile's viewing angle at launch. Was having issues with the missile being fired at really off angles.
 	Fi_start = math.rad(1),
 	Fi_excort = 0.7,
 	Fi_search = 99.9,
@@ -70,7 +70,7 @@ local FIM43C_LDM = {
 	Reflection = 0.05,
 	KillDistance = 0.5,
 	--seeker sensivity params
-	SeekerSensivityDistance = 5000, -- The range of target with IR value = 1. In meters.
+	SeekerSensivityDistance = 5000, -- The range of target with IR value = 1. In meters. Was reduced from 6000, as the other missile parameters were otherwise making it too effective.
 	ccm_k0 = 1.4,  -- Counter Countermeasures Probability Factor. Value = 0 - missile has absolutely resistance to countermeasures. Default = 1 (medium probability)
 	SeekerCooled			= true, -- True is cooled seeker and false is not cooled seeker.
 	shape_table_data = 
@@ -136,7 +136,7 @@ local FIM43C_LDM = {
 	fm = {
 		mass        = 8.3,  
 		caliber     = 0.07,  
-		cx_coeff    = {1, 1.2, 0.8, 0.6, 1.8},
+		cx_coeff    = {1, 1.2, 0.8, 0.6, 1.8},	--made the missile slightly draggier, especially at Mach 1+, to help reduce range while still allowing the missile to attain its stated max speed.
 		L           = 1.4,
 		I           = 1 / 12 * 8.3 * 1.4 * 1.4,
 		Ma          = 0.6,
@@ -158,7 +158,7 @@ local FIM43C_LDM = {
 		opTime			= 14.0,
 		target_H_min	= 0.0,
 		flag_dist		= 150.0,	--originally 150
-		abs_err_val		= 11.5,
+		abs_err_val		= 11.5,		--drastically increased from 3.5, makes the missile more likely to miss even if there are no flares
 		ground_err_k	= 3.1,
 		ccm_k0 			= 1.4,
 	},
