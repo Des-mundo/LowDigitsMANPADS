@@ -1,36 +1,13 @@
 -- Missile
-local function calcPiercingMass(warhead)
-	warhead.piercing_mass  = warhead.mass;
-	if (warhead.expl_mass/warhead.mass > 0.1) then
-		warhead.piercing_mass  = warhead.mass/5.0;
-	end
-end
-
-local function simple_aa_warhead(power, caliber) -- By Saint
-    local res = {};
-
-	res.caliber = caliber
-	res.mass = power; --old explosion damage effect
-    res.expl_mass = power;
-    res.other_factors = {1, 1, 1};
-    res.obj_factors = {1, 1};
-    res.concrete_factors = {1, 1, 1};
-    res.cumulative_factor = 0;
-    res.concrete_obj_factor = 0.0;
-    res.cumulative_thickness = 0.0;
-    
-	calcPiercingMass(res)
-    return res;
-end
-
 local SA9M32_LDM = {
 	category		= CAT_MISSILES,
 	name			= "Strela-2",
 	user_name		= _("9M32 Strela-2"),
-	user_name_short		= _("Strela-2"),
+	display_name	= _("9M32 Strela-2"),
+	display_name_short = _("Strela-2"),
 	scheme			= "self_homing_spin_missile2",
 	class_name		= "wAmmunitionSelfHoming",
-	model			= "OH58D_FIM_92", --"fim-92",
+	model			= "OH58D_FIM_92",	--"fim-92",
 	mass			= 9.2, --10.3
 	
 	wsTypeOfWeapon  = {wsType_Weapon,wsType_Missile,wsType_SA_Missile,WSTYPE_PLACEHOLDER};
@@ -87,7 +64,7 @@ local SA9M32_LDM = {
 		piercing_mass 			= 0.23, --1.25
 		time_self_destruct		= 14,
 	},
-	X_back = -0.781,
+	X_back = -0.63,
 	Y_back = 0.0,
 	Z_back = 0.0,
 	Reflection = 0.01,
@@ -120,7 +97,7 @@ local SA9M32_LDM = {
 		work_time							= 0.048,
 		boost_time							= 0,
 		boost_factor						= 0,
-		nozzle_position						= {{-0.8, 0.0, 0}},
+		nozzle_position						= {{-0.635, 0.0, 0.001}},
 		nozzle_orientationXYZ				= {{0.0, 0.0, 0.0}},
 		tail_width							= 0.4,
 		smoke_color							= {1.0, 1.0, 1.0},
@@ -134,7 +111,7 @@ local SA9M32_LDM = {
 		work_time							= 1.9,
 		boost_time							= 0,
 		boost_factor						= 0,
-		nozzle_position						= {{-0.8, 0.0, 0.0}},
+		nozzle_position						= {{-0.635, 0.0, 0.001}},
 		nozzle_orientationXYZ				= {{0.0, 0.0, 0.0}},
 		tail_width							= 0.2,
 		smoke_color							= {1.0, 1.0, 1.0},
@@ -148,7 +125,7 @@ local SA9M32_LDM = {
 		work_time							= 4.6,
 		boost_time							= 0,
 		boost_factor						= 0,
-		nozzle_position						= {{-0.8, 0.0, 0.0}},
+		nozzle_position						= {{-0.635, 0.0, 0.001}},
 		nozzle_orientationXYZ				= {{0.0, 0.0, 0.0}},
 		tail_width							= 0.2,
 		smoke_color							= {1.0, 1.0, 1.0},
@@ -218,8 +195,8 @@ GT_t.LN_t.strela2_LDM = {}
 GT_t.LN_t.strela2_LDM.type = 4
 GT_t.LN_t.strela2_LDM.distanceMin = 800 --500
 GT_t.LN_t.strela2_LDM.distanceMax = 3200 --4500
-GT_t.LN_t.strela2_LDM.reactionTime = 2;
-GT_t.LN_t.strela2_LDM.launch_delay = 1;
+GT_t.LN_t.strela2_LDM.reactionTime = 4;
+GT_t.LN_t.strela2_LDM.launch_delay = 3;
 GT_t.LN_t.strela2_LDM.maxShootingSpeed = 0
 GT_t.LN_t.strela2_LDM.reflection_limit = 0.22
 GT_t.LN_t.strela2_LDM.ECM_K = -1
