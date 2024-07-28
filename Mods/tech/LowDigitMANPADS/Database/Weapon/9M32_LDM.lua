@@ -217,7 +217,7 @@ GT_t.LN_t.strela2_LDM.BR = { { pos = {1, 0, 0}, drawArgument = 4}, }
 GT_t.WS_t.strela2_LDM_manpad = {};
 GT_t.WS_t.strela2_LDM_manpad.pos = {-0.071, 1.623,0};
 GT_t.WS_t.strela2_LDM_manpad.angles = {
-					{math.rad(180), math.rad(-180), math.rad(-45), math.rad(80)},
+					{math.rad(180), math.rad(-180), math.rad(-45), math.rad(75)},
 					};
 GT_t.WS_t.strela2_LDM_manpad.drawArgument1 = 0;
 GT_t.WS_t.strela2_LDM_manpad.drawArgument2 = 1;
