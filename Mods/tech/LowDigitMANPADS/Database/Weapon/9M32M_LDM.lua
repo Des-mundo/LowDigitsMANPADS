@@ -1,36 +1,13 @@
 -- Missile
-local function calcPiercingMass(warhead)
-	warhead.piercing_mass  = warhead.mass;
-	if (warhead.expl_mass/warhead.mass > 0.1) then
-		warhead.piercing_mass  = warhead.mass/5.0;
-	end
-end
-
-local function simple_aa_warhead(power, caliber) -- By Saint
-    local res = {};
-
-	res.caliber = caliber
-	res.mass = power; --old explosion damage effect
-    res.expl_mass = power;
-    res.other_factors = {1, 1, 1};
-    res.obj_factors = {1, 1};
-    res.concrete_factors = {1, 1, 1};
-    res.cumulative_factor = 0;
-    res.concrete_obj_factor = 0.0;
-    res.cumulative_thickness = 0.0;
-    
-	calcPiercingMass(res)
-    return res;
-end
-
 local SA9M32M_LDM = {
 	category		= CAT_MISSILES,
 	name			= "Strela-2M",
-	user_name		= _("9M32M Strela-2M"),	
-	user_name_short		= _("Strela-2M"),
+	user_name		= _("9M32M Strela-2M"),
+	display_name	= _("9M32M Strela-2M"),
+	display_name_short = _("Strela-2M"),
 	scheme			= "self_homing_spin_missile2",
 	class_name		= "wAmmunitionSelfHoming",
-	model			= "OH58D_FIM_92", --"fim-92",
+	model			= "OH58D_FIM_92",	--"fim-92",
 	mass			= 9.85, --10.3
 	
 	wsTypeOfWeapon  = {wsType_Weapon,wsType_Missile,wsType_SA_Missile,WSTYPE_PLACEHOLDER};
@@ -87,7 +64,7 @@ local SA9M32M_LDM = {
 		piercing_mass 			= 0.36, --1.25
 		time_self_destruct		= 17,
 	},
-	X_back = -0.781,
+	X_back = -0.62,
 	Y_back = 0.0,
 	Z_back = 0.0,
 	Reflection = 0.01,
@@ -120,7 +97,7 @@ local SA9M32M_LDM = {
 		work_time							= 0.048,
 		boost_time							= 0,
 		boost_factor						= 0,
-		nozzle_position						= {{-0.8, 0.0, 0}},
+		nozzle_position						= {{-0.635, 0.0, 0.0005}},
 		nozzle_orientationXYZ				= {{0.0, 0.0, 0.0}},
 		tail_width							= 0.4,
 		smoke_color							= {1.0, 1.0, 1.0},
@@ -134,7 +111,7 @@ local SA9M32M_LDM = {
 		work_time							= 1.9,
 		boost_time							= 0,
 		boost_factor						= 0,
-		nozzle_position						= {{-0.8, 0.0, 0.0}},
+		nozzle_position						= {{-0.635, 0.0, 0.0005}},
 		nozzle_orientationXYZ				= {{0.0, 0.0, 0.0}},
 		tail_width							= 0.2,
 		smoke_color							= {1.0, 1.0, 1.0},
@@ -148,7 +125,7 @@ local SA9M32M_LDM = {
 		work_time							= 4.6,
 		boost_time							= 0,
 		boost_factor						= 0,
-		nozzle_position						= {{-0.8, 0.0, 0.0}},
+		nozzle_position						= {{-0.635, 0.0, 0.0005}},
 		nozzle_orientationXYZ				= {{0.0, 0.0, 0.0}},
 		tail_width							= 0.2,
 		smoke_color							= {1.0, 1.0, 1.0},
@@ -218,8 +195,8 @@ GT_t.LN_t.strela2m_LDM = {}
 GT_t.LN_t.strela2m_LDM.type = 4
 GT_t.LN_t.strela2m_LDM.distanceMin = 800 --500
 GT_t.LN_t.strela2m_LDM.distanceMax = 4200 --4500
-GT_t.LN_t.strela2m_LDM.reactionTime = 2;
-GT_t.LN_t.strela2m_LDM.launch_delay = 1;
+GT_t.LN_t.strela2m_LDM.reactionTime = 4;
+GT_t.LN_t.strela2m_LDM.launch_delay = 3;
 GT_t.LN_t.strela2m_LDM.maxShootingSpeed = 0
 GT_t.LN_t.strela2m_LDM.reflection_limit = 0.22
 GT_t.LN_t.strela2m_LDM.ECM_K = -1
@@ -240,7 +217,7 @@ GT_t.LN_t.strela2m_LDM.BR = { { pos = {1, 0, 0}, drawArgument = 4}, }
 GT_t.WS_t.strela2m_LDM_manpad = {};
 GT_t.WS_t.strela2m_LDM_manpad.pos = {-0.071, 1.623,0};
 GT_t.WS_t.strela2m_LDM_manpad.angles = {
-					{math.rad(180), math.rad(-180), math.rad(-45), math.rad(80)},
+					{math.rad(180), math.rad(-180), math.rad(-45), math.rad(75)},
 					};
 GT_t.WS_t.strela2m_LDM_manpad.drawArgument1 = 0;
 GT_t.WS_t.strela2m_LDM_manpad.drawArgument2 = 1;
