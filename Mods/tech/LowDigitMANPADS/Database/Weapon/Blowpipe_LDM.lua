@@ -13,7 +13,7 @@ local BLOWPIPE_LDM = {
 	
 	Escort = 3,
 	Head_Type = 7,
-	sigma = {11, 11, 11},
+	sigma = {11, 11, 11},	--increased values to increase errors
 	M = 11,
 	H_max = 2500.0,
 	H_min = 0.01,
@@ -138,13 +138,13 @@ local BLOWPIPE_LDM = {
 		I           = 1 / 12 * 11 * 1.35 * 1.35,
 		Ma          = 0.6,
 		Mw          = 1.2,
-		wind_sigma 	= 1,	--was 0.0
+		wind_sigma 	= 1,	--was 0.0, now affected by wind more
 		wind_time 	= 1000,
 		Sw			= 0.2,
 		dCydA		= {0.05, 0.030},	--started at {0.07, 0.036}
 		A			= 0.4,	--was 0.6
 		maxAoa		= 0.12,	--started at 0.22
-		finsTau		= 0.05,	--was 0.1
+		finsTau		= 0.05,	--was 0.1, made fins less responsive?
 		lockRoll 	= 1,
 	},
 	
@@ -176,10 +176,10 @@ local BLOWPIPE_LDM = {
 	},
 	
 	err = {
-		y_error				= 0.070,
+		y_error				= 0.070,	--greater error in the y-axis, makes it zoom by the target without hitting more often
 		z_error				= 0.045,
-		min_time_interval	= 0.3,
-		max_time_interval	= 1.2,
+		min_time_interval	= 0.3,		--there will always be constant corrections now, which is more likely to cause errors
+		max_time_interval	= 1.2,		--time interval window expanded
 	},
 	
 	fuze = {
@@ -196,7 +196,7 @@ GT_t.LN_t.Blowpipe_LDM_missile.type = 4
 GT_t.LN_t.Blowpipe_LDM_missile.distanceMin = 700
 GT_t.LN_t.Blowpipe_LDM_missile.distanceMax = 3500
 GT_t.LN_t.Blowpipe_LDM_missile.reactionTime = 4;
-GT_t.LN_t.Blowpipe_LDM_missile.launch_delay = 10;
+GT_t.LN_t.Blowpipe_LDM_missile.launch_delay = 10;	--system takes several seconds to warm up and prime
 GT_t.LN_t.Blowpipe_LDM_missile.maxShootingSpeed = 0
 GT_t.LN_t.Blowpipe_LDM_missile.reflection_limit = 0.24
 GT_t.LN_t.Blowpipe_LDM_missile.ECM_K = -1
@@ -229,4 +229,4 @@ GT_t.WS_t.BLOWPIPE_LDM_MANPAD.reloadAngleY = -100; -- not constrained
 GT_t.WS_t.BLOWPIPE_LDM_MANPAD.LN = {};
 GT_t.WS_t.BLOWPIPE_LDM_MANPAD.LN[1] = {};
 set_recursive_metatable(GT_t.WS_t.BLOWPIPE_LDM_MANPAD.LN[1], GT_t.LN_t.Blowpipe_LDM_missile);
-GT_t.WS_t.BLOWPIPE_LDM_MANPAD.LN[1].PL[1].shot_delay = 16;
+GT_t.WS_t.BLOWPIPE_LDM_MANPAD.LN[1].PL[1].shot_delay = 16;	--missiles were firing off in volleys a bit too quickly
