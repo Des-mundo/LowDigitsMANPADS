@@ -12,7 +12,7 @@ local BLOWPIPE_LDM = {
 	
 	Escort = 3,
 	Head_Type = 7,
-	sigma = {10, 6, 10},
+	sigma = {11, 11, 11},
 	M = 11,
 	H_max = 2500.0,
 	H_min = 0.01,
@@ -24,7 +24,7 @@ local BLOWPIPE_LDM = {
 	Life_Time = 17.0,
 	Nr_max = 3,
 	v_min = 70.0,
-	v_mid = 510.0,	-- speed of mach 1.5 at sea level, m/s
+	v_mid = 510.0,	-- speed of mach 1.5 at sea level, m/s; also 1836 km/h
 	Mach_max = 1.5,
 	t_b = 0.0,
 	t_acc = 2.0,
@@ -33,7 +33,7 @@ local BLOWPIPE_LDM = {
 	H_min_t = 10.0,
 	Fi_start = math.rad(-15),
 	Fi_rak = 3.14152,
-	Fi_excort = 0.9,
+	Fi_excort = 0.5,
 	Fi_search = 99.9,
 	OmViz_max = 99.9,
 	warhead = {
@@ -65,14 +65,14 @@ local BLOWPIPE_LDM = {
 	X_back = -0.781,
 	Y_back = 0.0,
 	Z_back = 0.0,
-	Reflection		= 0.0,
+	Reflection		= 0.01,
 	KillDistance = 1.0,
 	--seeker sensivity params
 	ccm_k0 = 0.0,  -- Counter Countermeasures Probability Factor. Value = 0 - missile has absolutely resistance to countermeasures. Default = 1 (medium probability)
 	shape_table_data = 
 	{
 		{
-			name	 = "Blowpipe";
+			name	 = "Blowpipe_LDM";
 			file  	 = "mistral_missile";
 			life  	 = 1;
 			fire  	 = { 0, 1};
@@ -102,7 +102,7 @@ local BLOWPIPE_LDM = {
 	},
 		
 	march = {
-		impulse								= 145,
+		impulse								= 170,
 		fuel_mass							= 3.48,
 		work_time							= 5.2,
 		boost_time							= 0,
@@ -115,7 +115,7 @@ local BLOWPIPE_LDM = {
 		custom_smoke_dissipation_factor		= 0.3,	
 	},
 	
-	march2 = {
+	march2 = {								--not used
 		impulse								= 180,
 		fuel_mass							= 1.6,
 		work_time							= 4.6,
@@ -132,41 +132,41 @@ local BLOWPIPE_LDM = {
 	fm = {
 		mass        = 11,  
 		caliber     = 0.076,  
-		cx_coeff    = {0.8,1.00,0.8,0.4,1.1},
+		cx_coeff    = {0.8,1.00,0.8,0.5,1.7},
 		L           = 1.35,
 		I           = 1 / 12 * 11 * 1.35 * 1.35,
 		Ma          = 0.6,
 		Mw          = 1.2,
-		wind_sigma 	= 0,
+		wind_sigma 	= 1,	--was 0.0
 		wind_time 	= 1000,
 		Sw			= 0.2,
-		dCydA		= {0.07, 0.036},
-		A			= 0.6,
+		dCydA		= {0.05, 0.030},	--started at {0.07, 0.036}
+		A			= 0.4,	--was 0.6
 		maxAoa		= 0.12,	--started at 0.22
-		finsTau		= 0.1,
+		finsTau		= 0.05,	--was 0.1
 		lockRoll 	= 1,
 	},
 	
 	spiral_nav = {
 										-- laser guidance simulation--	(use high values for wire/radio guidance)
-		t_cone_near_rad			= 0,	-- simple simulation radius (for bots)
+		t_cone_near_rad			= 10,	-- simple simulation radius (for bots)
 		def_cone_max_dist		= 10000,-- laser reach
 		def_cone_near_rad		= 0,	-- stab. radius
 		def_cone_near_rad_st	= 0,	-- start radius
-		def_cone_time_stab_rad	= 0,	-- stab. time
+		def_cone_time_stab_rad	= 20,	-- stab. time
 
 										-- start/dust avoidance program--
 		gb_angle				= math.rad(10),-- start angle above LOS (rad)
 		gb_min_dist				= 30,	-- min distance to use this program
-		gb_use_time				= 0.7,	-- time trigger: return aim to LOS
-		gb_max_retW				= 0.7,	-- ret W max
+		gb_use_time				= 1.2,	-- time trigger: return aim to LOS, started at 0.7
+		gb_max_retW				= 0.9,	-- ret W max, started at 0.7
 		gb_ret_Kp				= 1.0,	-- ret power coeff.
 	},
 
 	autopilot = {
-		Kp					= 0.004,	--P
-		Ki					= 0.0000,	--I
-		Kd					= 0.0035,	--D
+		Kp					= 0.006,	--P	was 0.004
+		Ki					= 0.0010,	--I started at 0.000
+		Kd					= 0.0035,	--D, started at 0.0035
 		max_ctrl_angle		= 1.35,		--turn off autopilot after reaching max angle
 		delay				= 2,		--autopilot delay, takes ~2 seconds before MCLOS control is provided
 		op_time				= 20.0,		--autopilot operation time
@@ -175,10 +175,10 @@ local BLOWPIPE_LDM = {
 	},
 	
 	err = {
-		y_error				= 0.016,
-		z_error				= 0.018,
-		min_time_interval	= 0.1,
-		max_time_interval	= 0.9,
+		y_error				= 0.070,
+		z_error				= 0.045,
+		min_time_interval	= 0.3,
+		max_time_interval	= 1.2,
 	},
 	
 	fuze = {
@@ -194,8 +194,8 @@ GT_t.LN_t.Blowpipe_LDM_missile = {}
 GT_t.LN_t.Blowpipe_LDM_missile.type = 4
 GT_t.LN_t.Blowpipe_LDM_missile.distanceMin = 700
 GT_t.LN_t.Blowpipe_LDM_missile.distanceMax = 3500
-GT_t.LN_t.Blowpipe_LDM_missile.reactionTime = 2;
-GT_t.LN_t.Blowpipe_LDM_missile.launch_delay = 3;
+GT_t.LN_t.Blowpipe_LDM_missile.reactionTime = 4;
+GT_t.LN_t.Blowpipe_LDM_missile.launch_delay = 10;
 GT_t.LN_t.Blowpipe_LDM_missile.maxShootingSpeed = 0
 GT_t.LN_t.Blowpipe_LDM_missile.reflection_limit = 0.24
 GT_t.LN_t.Blowpipe_LDM_missile.ECM_K = -1
