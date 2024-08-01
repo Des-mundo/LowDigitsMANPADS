@@ -1,0 +1,18 @@
+FIM-43C Block III
+
+fim-92
+
+
+Name: FIM-43C "Redeye"
+Type: Short-range, infra-red guided, surface-to-air missile, man-portable
+Developed: USA
+Guidance: Infrared seeker
+Seeker gimble limit, °: 40
+Seeker FOV, °: 1.25
+Warhead weight, kg: 1.06
+Weight, kg: 8.3 kg
+G limit: 3
+Length, m: 1.4
+Body diameter, mm: 70
+Range, km: 4.5
+Maximum Mach number: 1.7

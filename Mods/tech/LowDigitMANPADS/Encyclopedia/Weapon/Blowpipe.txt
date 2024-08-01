@@ -1,0 +1,15 @@
+Blowpipe
+
+mistral_missile
+
+
+Name: Shorts Blowpipe
+Type: Short-range, MCLOS guided, surface-to-air missile, man-portable
+Developed: Great Britain
+Guidance: MCLOS via radio command link
+Warhead weight, kg: 2.2
+Weight, kg: 11 kg (14.5 kg in tube)
+Length, m: 1.35
+Body diameter, mm: 76
+Range, km: 3.5
+Maximum Mach number: 1.5

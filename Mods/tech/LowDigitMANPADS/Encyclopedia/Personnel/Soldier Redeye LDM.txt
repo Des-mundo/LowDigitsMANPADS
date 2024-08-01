@@ -1,0 +1,23 @@
+MANPADS FIM-43C Redeye - shooter
+
+soldier_stinger
+Soldier_Redeye_LDM
+
+Type: Low-altitude SAM system
+In service: 1968
+Length (missile): 1.40 m
+Diameter (missile): 70 mm
+Weight (launcher complete): 13.3 kg
+Weight (missile): 8.3 kg
+Warhead weight: 1.06
+Warhead filler: 0.36 kg HTA-3
+Warhead type: Blast fragmentation M222 with impact fuze
+Max range: 4500 m
+Min effective range: 500 m
+Max altitude: 2700 m
+Max speed: Mach 1.7
+Seeker: Infrared cooled PbS
+
+The FIM-43C Redeye was the first US produced MANPAD to enter full production. The production model, the Block III, was produced from 1968 through 1973, entering service in 1968. The first two blocks, Block I (FIM-43A) and Block II (FIM-43), saw limited production between 1963 and 1966 and were mostly used for evaluation, though Block II systems were delivered to Korea in 1967 before being replaced by Block III in 1969. By the time the Block III was produced, the seeker head, rocket motor, and warhead had changed significantly. In testing, the calculated pK against a MiG-21 at 100 m traveling at 800 km/h was estimated as 0.403, and 0.53 against helicopters such as the Mi-6 and H-13. Unlike its Soviet counterpart, the Strela-2 "Grail", the Redeye featured limited forward-aspect capability depending on atmospheric conditions. However, it remained a primarily tail-chasing weapon.
+
+An updated version started in 1971, the Redeye II, eventually became the Stinger project.

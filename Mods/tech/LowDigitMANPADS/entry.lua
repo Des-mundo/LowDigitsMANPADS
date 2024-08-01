@@ -5,8 +5,8 @@ displayName   = _("Low Digit MANPADS"),
 shortName	  =   "LowDigitMANPADS",
 state		 	  = "installed",
 developerName	  = "modified by Des, credit goes to the High Digit SAMs Mod team, Blowpipe and FIM-43C by Xeno426",
-version		 	  = "0.4",	
-info		  =    _("Adds Strela-2/M 9M32/M"),	 
+version		 	  = "0.45",
+info		  =    _("Adds Strela-2/M 9M32/M, Blowpipe, and FIM-43C Redeye"),	 
 encyclopedia_path = current_mod_path .. '/Encyclopedia',
 })
 

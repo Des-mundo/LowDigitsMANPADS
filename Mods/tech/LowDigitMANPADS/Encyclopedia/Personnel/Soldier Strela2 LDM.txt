@@ -1,0 +1,21 @@
+MANPADS Strela-2 - shooter
+
+soldier_ru_03
+Soldier_Strela2_LDM
+
+Type: Low-altitude SAM system
+In service: 1968
+Length (missile): 1.40 m
+Diameter (missile): 70 mm
+Weight (launcher complete): 15 kg
+Weight (missile): 9.2 kg
+Warhead weight: 1.17 kg
+Warhead filler: 0.37 kg
+Warhead type: Blast fragmentation
+Max range: 3500 m
+Min effective range: 800 m
+Max altitude: 1500 m
+Max speed: 600 m/s
+Seeker: Infrared uncooled PbS
+
+The Strela-2 is an early, light IR-homing MANPADS produced in the thousands and proliferated in most major conflicts of the 70s. The mod attempts to simulate its limited capability - stemming from the uncooled IR seeker, single channel autopilot and contact fuzing. The 9M32 missile is susceptible to flares and allows for rear aspect launches. Damage output is limited due to the light, 370g explosive filling of the warhead. 

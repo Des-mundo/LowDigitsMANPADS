@@ -1,9 +1,10 @@
 -- Missile
 local FIM43C_LDM = {
 	category		= CAT_MISSILES,
-	name			= "FIM-43C_LDM",
+	name			= "FIM43C_LDM",
 	user_name		= _("FIM-43C Redeye"),
-	user_name_short	= _("FIM-43C"),
+	display_name	= _("FIM-43C Redeye"),
+	display_name_short = _("FIM-43C"),	--this is the short name that shows up in the F10 map
 	scheme			= "self_homing_spin_missile",	--"self_homing_spin_missile2",
 	class_name		= "wAmmunitionSelfHoming",
 	model			= "fim-92",
@@ -23,17 +24,17 @@ local FIM43C_LDM = {
 	D_min = 500.0,
 	Head_Form = 1,
 	Life_Time = 17.0,
-	Nr_max = 6,
+	Nr_max = 3,
 	v_min = 70.0,
-	v_mid = 580.0,	-- for 1127 kt top speed
-	Mach_max = 1.6,
+	v_mid = 580.0,	-- for 1127 kt top speed, or 2088 km/h
+	Mach_max = 1.7,
 	t_b = 0.0,
-	t_acc = 0.048,
+	t_acc = 0.06,
 	t_marsh = 5.8,
 	Range_max = 4500.0,
 	H_min_t = 10.0,
+	Fi_rak = math.rad(60),	--restricted the initial missile's viewing angle at launch. Was having issues with the missile being fired at really off angles.
 	Fi_start = math.rad(1),
-	Fi_rak = 3.14152,
 	Fi_excort = 0.7,
 	Fi_search = 99.9,
 	OmViz_max = 99.9,
@@ -66,16 +67,16 @@ local FIM43C_LDM = {
 	X_back = -0.781,
 	Y_back = 0.0,
 	Z_back = 0.0,
-	Reflection = 0.01,
-	KillDistance = 1,
+	Reflection = 0.05,
+	KillDistance = 0.5,
 	--seeker sensivity params
-	SeekerSensivityDistance = 6000, -- The range of target with IR value = 1. In meters.
-	ccm_k0 = 1.38,  -- Counter Countermeasures Probability Factor. Value = 0 - missile has absolutely resistance to countermeasures. Default = 1 (medium probability)
+	SeekerSensivityDistance = 5000, -- The range of target with IR value = 1. In meters. Was reduced from 6000, as the other missile parameters were otherwise making it too effective.
+	ccm_k0 = 1.4,  -- Counter Countermeasures Probability Factor. Value = 0 - missile has absolutely resistance to countermeasures. Default = 1 (medium probability)
 	SeekerCooled			= true, -- True is cooled seeker and false is not cooled seeker.
 	shape_table_data = 
 	{
 		{
-			name	 = "FIM-43C_LDM";
+			name	 = "FIM43C_LDM";
 			file  	 = "fim-92";
 			life  	 = 1;
 			fire  	 = { 0, 1};
@@ -91,9 +92,9 @@ local FIM43C_LDM = {
 	},
 	
 	booster = {
-		impulse								= 197,	--170?
+		impulse								= 220,	--should get the missile to 109 km/h
 		fuel_mass							= 0.104,
-		work_time							= 0.048,
+		work_time							= 0.06,
 		boost_time							= 0,
 		boost_factor						= 0,
 		nozzle_position						= {{-0.8, 0.0, 0}},
@@ -105,7 +106,7 @@ local FIM43C_LDM = {
 	},
 		
 	march = {
-		impulse								= 252,
+		impulse								= 195,
 		fuel_mass							= 2.76,	--2.76kg total mass of fuel
 		work_time							= 5.8,	--5.8s total burn, burns fuel at rate of 0.47586 kg/s
 		boost_time							= 0,
@@ -120,8 +121,8 @@ local FIM43C_LDM = {
 
 	march2 = {
 		impulse								= 180,	--march2 not currently used
-		fuel_mass							= 1.6,
-		work_time							= 4.6,
+		fuel_mass							= 1.85,
+		work_time							= 3.9,
 		boost_time							= 0,
 		boost_factor						= 0,
 		nozzle_position						= {{-0.8, 0.0, 0.0}},
@@ -135,7 +136,7 @@ local FIM43C_LDM = {
 	fm = {
 		mass        = 8.3,  
 		caliber     = 0.07,  
-		cx_coeff    = {1,1.15,0.8,0.4,1.5},
+		cx_coeff    = {1, 1.2, 0.8, 0.6, 1.8},	--made the missile slightly draggier, especially at Mach 1+, to help reduce range while still allowing the missile to attain its stated max speed.
 		L           = 1.4,
 		I           = 1 / 12 * 8.3 * 1.4 * 1.4,
 		Ma          = 0.6,
@@ -149,22 +150,22 @@ local FIM43C_LDM = {
 	},
 	
 	simple_IR_seeker = {
-		sensitivity		= 6500,
+		sensitivity		= 5000,
 		cooled			= true,
 		delay			= 0.0,
 		GimbLim			= math.rad(40),
 		FOV				= math.rad(1.25);
 		opTime			= 14.0,
 		target_H_min	= 0.0,
-		flag_dist		= 150.0,
-		abs_err_val		= 3,
+		flag_dist		= 150.0,	--originally 150
+		abs_err_val		= 11.5,		--drastically increased from 3.5, makes the missile more likely to miss even if there are no flares
 		ground_err_k	= 3.1,
-		ccm_k0 			= 1.38,
+		ccm_k0 			= 1.4,
 	},
 	
 	simple_gyrostab_seeker = {
 		gimbal_lim = math.rad(40),
-		omega_max	= math.rad(8)
+		omega_max	= math.rad(6),
 	},
 	
 --	fuze = {
@@ -174,15 +175,15 @@ local FIM43C_LDM = {
 	
 	fuze_proximity = {
 		ignore_inp_armed	= 1,
-		radius				= 1,
+		radius				= 0.5,
 	},
 	
 	autopilot = {
-		K				= 1.4,
+		K				= 1.4,	--1.4
 		Kg				= 0.2,
 		Ki				= 0.0,
 		finsLimit		= 0.05,
-		delay			= 0.5,
+		delay			= 0.5,	--0.5
 		fin2_coeff		= 0.5,
 	},
 };
@@ -192,8 +193,8 @@ GT_t.LN_t.FIM43C_LDM_missile = {}
 GT_t.LN_t.FIM43C_LDM_missile.type = 4
 GT_t.LN_t.FIM43C_LDM_missile.distanceMin = 500
 GT_t.LN_t.FIM43C_LDM_missile.distanceMax = 4500
-GT_t.LN_t.FIM43C_LDM_missile.reactionTime = 9;
-GT_t.LN_t.FIM43C_LDM_missile.launch_delay = 3;
+GT_t.LN_t.FIM43C_LDM_missile.reactionTime = 6;	--was 9;
+GT_t.LN_t.FIM43C_LDM_missile.launch_delay = 4;	--was 4;
 GT_t.LN_t.FIM43C_LDM_missile.maxShootingSpeed = 0
 GT_t.LN_t.FIM43C_LDM_missile.reflection_limit = 0.24
 GT_t.LN_t.FIM43C_LDM_missile.ECM_K = -1
